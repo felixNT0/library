@@ -1,0 +1,44 @@
+.nav {
+  background: cadetblue;
+  height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 3px 3px rgb(21, 21, 21);
+}
+
+.ul {
+  float: right;
+  margin-right: 20px;
+}
+
+.ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: whitesmoke;
+  color: cadetblue;
+  transition: 0.5s;
+}
+
+/* .btn:active{
+   background: whitesmoke;
+  color: cadetblue;
+  transition: 0.5s;
+} */
+
+button {
+  cursor: pointer;
+}

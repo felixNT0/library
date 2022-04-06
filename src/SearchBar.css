@@ -1,0 +1,43 @@
+.card {
+
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+form {
+ 
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid cadetblue;
+}
+
+h3 {
+  color: cadetblue;
+}
+
+button {
+  padding: 20px;
+  background-color: cadetblue;
+  border-radius: 10px;
+  color: #fff;
+}
+
+button:hover{
+    background-color: whitesmoke;
+    color: cadetblue;
+}
+
+.search{
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
