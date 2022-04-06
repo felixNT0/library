@@ -1,0 +1,52 @@
+.root {
+    max-width: 600px;
+    margin: auto;
+}
+
+.card {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid cadetblue;
+    margin-right: 20px;
+    flex: 1;
+    outline: none;
+}
+
+h3 {
+    color: cadetblue;
+}
+
+.button {
+
+    height: 50px;
+    padding: 0px 20px;
+    background-color: cadetblue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: whitesmoke;
+    color: cadetblue;
+}
+
+.search {
+    float: right;
+    display: flex;
+    flex-direction: column;
+}

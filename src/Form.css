@@ -1,42 +1,42 @@
-.card {
-  width: 350px;
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  margin-top: 50px;
-}
+/*.card {*/
+/*    width: 350px;*/
+/*    box-sizing: border-box;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    margin-top: 50px;*/
+/*}*/
 
-form {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
+/*form {*/
+/*    align-items: center;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 
-input {
-  display: block;
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border: 1px solid cadetblue;
-}
+/*input {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    margin-bottom: 20px;*/
+/*    border: 1px solid cadetblue;*/
+/*}*/
 
-h3 {
-  color: cadetblue;
-}
+/*h3 {*/
+/*    color: cadetblue;*/
+/*}*/
 
-button {
-  height: 50px;
-  padding: 0px 20px;
-  background-color: cadetblue;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  color: #fff;
-}
+/*button {*/
+/*    height: 50px;*/
+/*    padding: 0px 20px;*/
+/*    background-color: cadetblue;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    border-radius: 5px;*/
+/*    color: #fff;*/
+/*}*/
 
-button:hover {
-  background-color: whitesmoke;
-  color: cadetblue;
-  border: 1px solid cadetblue;
-}
+/*button:hover {*/
+/*    background-color: whitesmoke;*/
+/*    color: cadetblue;*/
+/*    border: 1px solid cadetblue;*/
+/*}*/
