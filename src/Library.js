@@ -6,40 +6,79 @@ import "./Library.css"
 
 const getDataFromLocalStorage = () => {
   const data = localStorage.getItem("books")
+  // console.log(data)
   if (data) {
-    // return JSON.parse(data)
+    return JSON.parse(data)
   } else {
     return []
   }
-  return []
+  // return []
 }
 
 export default function Library() {
   // const URL = "  http://localhost:8000/books"
 
-  const [books, setBooks] = useState()
-  const [isPending, setIsPending] = useState(true)
+  // const [books, setBooks] = useState(getDataFromLocalStorage())
+  // // const [isPending, setIsPending] = useState(true)
 
-  const handleGetBooks = (e) => {
-    e.preventDefault()
-    let books = getDataFromLocalStorage()
+  // const handleGetBooks = (e) => {
+  //   e.preventDefault()
+  //   let books = getDataFromLocalStorage()
+
+  //   setBooks(books)
+  //   // setIsPending(false)
+  // }
+
+  const [books, setBooks] = useState(getDataFromLocalStorage())
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault()
+    let searched = event.target.value
+    let book = getDataFromLocalStorage()
+    books.filter((prev) => {
+      return prev.title.toLowerCase().includes(searched.toLowerCase())
+    })
+
+    // console.log(value)
+    // console.log(books).
+
     localStorage.setItem("books", JSON.stringify(books))
-    setBooks(books)
-    setIsPending(false)
+
+    setBooks(book)
+      console.log(book)
+
+    // setAdd("You have just successfully search a book from the library")
   }
 
   // useEffect(() => {
-
+  //   localStorage.setItem("books", JSON.stringify(books))
   // }, [books])
 
   return (
     <div>
-      <SearchBar books={books} />
+      <div className='search'>
+        <form>
+          <div className='card'>
+            <h3>Search For Books Here</h3>
+            <div className='search'>
+              {/* <p>{add}</p> */}
+              <input
+                type='text'
+                // onChange={handleSearchSubmit}
+                placeholder='Search'
+              />
+              <button onClick={handleSearchSubmit} type='submit'>
+                <i class='fas fa-search'></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
       <br />
-      <button style={{ marginTop: 20 }} onClick={handleGetBooks}>
+      {/* <button style={{ marginTop: 20 }} onClick={handleGetBooks}>
         <i class='fa-solid fa-rotate'></i>
-      </button>
-      {isPending && (
+      </button> */}
+      {/* {isPending && (
         <div>
           <img
             style={{ width: "100px", color: "cadetblue" }}
@@ -47,7 +86,7 @@ export default function Library() {
             alt='Preloader'
           />
         </div>
-      )}
+      )} */}
 
       {books.map((book) => (
         <ul key={book.id} className='cards'>
@@ -78,6 +117,7 @@ export default function Library() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Asperiores, blanditiis?
                 </p>
+                <p>{book.id}</p>
               </div>
             </a>
           </li>

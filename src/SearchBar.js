@@ -2,26 +2,39 @@ import React from "react"
 import { useState } from "react"
 //import Library from "./Library"
 
-function SearchBar({ books }) {
-  const [search, setSearch] = useState("")
-  const [searchBook, setSearchBook] = useState([])
-  const [message, setMessage] = useState("")
-
-  const handleChange = (event) => {
-    setSearch(event.target.value)
+const getDataFromLocalStorage = () => {
+  const data = localStorage.getItem("books")
+  if (data) {
+    return JSON.parse(data)
+  } else {
+    return []
   }
+  // return []
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let allBooks = books
-    let book = allBooks.filter((prev) =>
-      prev.title.toLowerCase(book).includes(searchBook)
-    )
-    if (books !== book) {
-      setMessage("Sorry Books not in the Library")
-      return
-    }
-    setSearchBook(book)
+function SearchBar() {
+ // const [add, setAdd] = useState(false)
+  // const [value, setValue] = useState({
+  //   title: "",
+  //   author: "",
+  // })
+
+ const [search, setSearch] = useState([])
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    let searched = event.target.value
+    let books = getDataFromLocalStorage()
+    books.filter((prev) => {
+      return prev.title.toLowerCase().includes(searched)
+    })
+
+    // console.log(value)
+    // console.log(books).
+
+    localStorage.setItem("books", JSON.stringify(books))
+    setSearch(books)
+   // setAdd("You have just successfully search a book from the library")
   }
 
   return (
@@ -30,13 +43,12 @@ function SearchBar({ books }) {
         <div className='card'>
           <h3>Search For Books Here</h3>
           <div className='search'>
-            <p>{message}</p>
+            {/* <p>{add}</p> */}
             <input
               type='text'
-              onChange={handleChange}
-              name='title'
+              onChange={handleSubmit}
+             
               placeholder='Search'
-              value={search}
             />
             <button type='submit'>
               <i class='fas fa-search'></i>

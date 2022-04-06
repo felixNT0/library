@@ -6,11 +6,11 @@ import "./Form.css"
 const getDataFromLocalStorage = () => {
   const data = localStorage.getItem("books")
   if (data) {
-    // return JSON.parse(data)
+     return JSON.parse(data)
   } else {
     return []
   }
-  return []
+  // return []
 }
 
 function AddBook() {
@@ -30,8 +30,8 @@ function AddBook() {
     let books = getDataFromLocalStorage()
     books.push(value)
 
-    console.log(value)
-    console.log(books)
+    // console.log(value)
+    // console.log(books)
 
     localStorage.setItem("books", JSON.stringify(books))
     setValue({

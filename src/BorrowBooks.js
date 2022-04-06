@@ -6,11 +6,11 @@ import "./Form.css"
 const getDataFromLocalStorage = () => {
   const data = localStorage.getItem("books")
   if (data) {
-    // return JSON.parse(data)
+   return JSON.parse(data)
   } else {
     return []
   }
-  return []
+  // return []
 }
 
 function BorrowBooks() {
@@ -25,13 +25,13 @@ function BorrowBooks() {
     setValue((prev) => ({ ...prev, [event.target.name]: event.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, id) => {
     e.preventDefault()
     let books = getDataFromLocalStorage()
-    books.filter((prev) => prev.value !== value)
+   books.splice(value.id, 1)
 
-    console.log(value)
-    console.log(books)
+    // console.log(value)
+    // console.log(books)
 
     localStorage.setItem("books", JSON.stringify(books))
     setValue({
@@ -45,7 +45,7 @@ function BorrowBooks() {
     <div>
       <form onSubmit={handleSubmit}>
         <div className='card'>
-          <h3>Bo rrow Book From The Library</h3>
+          <h3>Borrow Book From The Library</h3>
           <p>{add}</p>
           <input
             type='text'

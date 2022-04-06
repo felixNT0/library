@@ -12,17 +12,22 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link className='btn' to='/AddBook'>
+          <Link className='btn' to='/add-book'>
             Add Book
           </Link>
         </li>
         <li>
-          <Link className='btn' to='/RemoveBook'>
+          <Link className='btn' to='/borrow-book'>
             Borrow Book
           </Link>
         </li>
         <li>
-          <Link className='btn' to='/Library'>
+          <Link className='btn' to='/edit-book'>
+            Edit Book
+          </Link>
+        </li>
+        <li>
+          <Link className='btn' to='/library'>
             Library
           </Link>
         </li>
