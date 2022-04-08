@@ -2,16 +2,18 @@ import { useNavigate, useParams } from "react-router";
 import styles from "./BookDetail.module.css";
 import { useState, useEffect } from "react";
 import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
-import EditBooks from "../../pages/EditBooks/EditBook";
+import { getBorrowedBooksFromLocalStorage } from "../../service/getBorrowedBooksFromLocalStorage";
+import EditBooks from "../../components/EditBooks/EditBook";
+import { FaStepBackward, FaRegTrashAlt } from "react-icons/fa";
 
 export default function BookDetail() {
   const { id } = useParams();
 
   const [book, setBook] = useState();
-  // const book = books.find((book) => book.id === id);
+
   const navigate = useNavigate();
 
-  const handleDeletBook = () => {
+  const handleDeleteBook = () => {
     const books = getBooksFromLocalStorage();
     const bookIndex = books.findIndex((book) => book.title === book.title);
     books.splice(bookIndex, 1);
@@ -22,9 +24,21 @@ export default function BookDetail() {
   function handleGetBooks() {
     const books = getBooksFromLocalStorage();
     let book = books.find((book) => book.id === id);
-    console.log(book);
     setBook(book);
   }
+
+  const borrowedBooks = getBorrowedBooksFromLocalStorage();
+  const handleBorrowBook = () => {
+    let books = getBooksFromLocalStorage();
+    const book = books.find((book) => book.id === id);
+    const bookIndex = books.findIndex((book) => book.id === id);
+    console.log(bookIndex);
+    borrowedBooks.push(book);
+    books.splice(bookIndex, 1);
+    localStorage.setItem("borrowBooks", JSON.stringify(borrowedBooks));
+    localStorage.setItem("books", JSON.stringify(books));
+    navigate("/book-list");
+  };
 
   useEffect(() => {
     handleGetBooks();
@@ -39,10 +53,15 @@ export default function BookDetail() {
           className={styles.deleteButton}
           onClick={() => navigate("/book-list")}
         >
-          Prev
+          <FaStepBackward />
         </button>
+
+        <button className={styles.deleteButton} onClick={handleBorrowBook}>
+          Borrow Book
+        </button>
+
         <button className={styles.deleteButton} onClick={handleDeleteBook}>
-          DeleteBook
+          <FaRegTrashAlt />
         </button>
       </div>{" "}
       {book && <EditBooks book={book} onUpdate={handleGetBooks} />}
