@@ -22,7 +22,7 @@
 }
 
 .h3 {
-     margin-top: 25px;
+  margin-top: 25px;
   color: cadetblue;
 }
 
@@ -42,15 +42,20 @@
   border: 1px solid cadetblue;
 }
 .click {
-     border: none;
-  outline: none;
+  display: block;
+  margin: 40px 0 0 70px;
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
   background-color: cadetblue;
   border-radius: 5px;
   color: #fff;
+  opacity: 0.8;
+  height: 40px;
 }
 
 .click:hover {
   background-color: whitesmoke;
   color: cadetblue;
-  border: 1px solid cadetblue;
+  opacity: 1;
 }
