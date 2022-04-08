@@ -25,8 +25,8 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link className="btn" to="/edit-book">
-            Edit Book
+          <Link className="btn" to="/return-book">
+            Return Book
           </Link>
         </li>
       </div>
