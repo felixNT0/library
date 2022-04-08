@@ -1,23 +1,16 @@
 import React, { useState } from "react";
+import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
+import styles from './AddBooks.module.css'
 
-// import axios from 'axios'
 
-const getDataFromLocalStorage = () => {
-  const data = localStorage.getItem("books");
-  if (data) {
-    return JSON.parse(data);
-  } else {
-    return [];
-  }
-  // return []
-};
+
 
 function AddBook() {
-  //const URL = "  http://localhost:8000/books"
   const [add, setAdd] = useState(false);
   const [value, setValue] = useState({
     title: "",
     author: "",
+   
   });
 
   const handleChange = (event) => {
@@ -26,47 +19,44 @@ function AddBook() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let books = getDataFromLocalStorage();
-    books.push(value);
-
-    // console.log(value)
-    // console.log(books)
-
+   const books = getBooksFromLocalStorage()
+ let addBook = books.push({ ...value, id: Date.now() })
     localStorage.setItem("books", JSON.stringify(books));
-    setValue({
-      title: "",
-      author: "",
-    });
+    setValue(addBook);
     setAdd("You have just successfully borrow a book from the library");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div className="card">
-          <h3>Add book to Library</h3>
-          <p>{add}</p>
+      <h3 className={styles.h3}>Add book to Library</h3>
+      <p>{add}</p>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.root}>
+         
           <input
-            type="text"
-            placeholder="Book Title"
+            className={styles.input}
+            type='text'
+            placeholder='Book Title'
             onChange={handleChange}
-            name="title"
+            name='title'
             // value={data}
           />
           <input
-            type="text"
-            placeholder="Book Autor"
+            className={styles.input}
+            type='text'
+            placeholder='Book Autor'
             onChange={handleChange}
-            name="author"
+            name='author'
             //  value={data}
           />
-          <button className="submit" type="submit">
+         
+          <button className={styles.button} type='submit'>
             Add More Books
           </button>
         </div>
       </form>
     </div>
-  );
+  )
 }
 
 export default AddBook;

@@ -5,8 +5,14 @@ import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage
 import BookCard from "../../components/BookCard/BookCard";
 
 export default function BookList() {
-  const books = getBooksFromLocalStorage();
+  const [books, setBooks] = useState(getBooksFromLocalStorage())
+  //const books = getBooksFromLocalStorage();
   const [searchedBook, setSearchedBook] = useState();
+
+  function handleDeleteAllBooks(e) {
+    e.preventDefault()
+    setBooks([])
+  }
 
   const handleSearchSubmit = (value) => {
     let search = books.filter((book) =>
@@ -28,6 +34,11 @@ export default function BookList() {
           <BookCard {...book} key={book.title} />
         ))}
       </ul>
+      <hr />
+      <button className={styles.btn} onclick={handleDeleteAllBooks}>
+        Delete All Books<i class='fa fa-trash' aria-hidden='true'></i>
+      </button>
+      <br />
     </div>
-  );
+  )
 }
