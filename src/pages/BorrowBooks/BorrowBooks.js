@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./BorrowBooks.module.css";
 import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
+import { getBorrowedBooksFromLocalStorage } from "../../service/getBorrowedBooksFromLocalStorage";
+import { Navigate } from "react-router";
 
 function BorrowBooks() {
   const [add, setAdd] = useState(false);
@@ -19,21 +21,21 @@ function BorrowBooks() {
     const bookTitleIndex = books.findIndex(
       (item) => item.title === value.title
     );
-    const bookFindTitle = books.find(
-      (item) => item.title.toLower() === value.title
-    );
-    const bookFindAuthor = books.find(
-      (item) => item.author.toLower() === value.author
-    );
+    const bookFindTitle = books.find((item) => item.title === value.title);
+    const bookFindAuthor = books.find((item) => item.author === value.author);
+    const borrowedBooks = getBorrowedBooksFromLocalStorage();
 
     if (bookFindTitle && bookFindAuthor) {
+      borrowedBooks.push(bookFindTitle);
       books.splice(bookTitleIndex, 1);
       localStorage.setItem("books", JSON.stringify(books));
       setValue({
         title: "",
         author: "",
       });
+      localStorage.setItem("borrowBooks", JSON.stringify(borrowedBooks));
       setAdd("You have just successfully borrow a book from the library");
+      Navigate("/book-list");
     } else if (!bookFindTitle) {
       setAdd("book not found");
     } else {

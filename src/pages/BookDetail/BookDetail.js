@@ -6,12 +6,11 @@ export default function BookDetail() {
   const { id } = useParams();
   const books = getBooksFromLocalStorage();
   const book = books.find((book) => book.id === id);
-  const bookIndex = books.findIndex((book) => book.title === book.title);
+  const bookIndex = books.findIndex((item) => item.title === book.title);
   const navigate = useNavigate();
-  const handleDeletBook = () => {
+  const handleDeleteBook = () => {
     books.splice(bookIndex, 1);
     localStorage.setItem("books", JSON.stringify(books));
-
     navigate("/book-list");
   };
   return (
@@ -25,7 +24,7 @@ export default function BookDetail() {
         >
           Prev
         </button>
-        <button className={styles.deleteButton} onClick={handleDeletBook}>
+        <button className={styles.deleteButton} onClick={handleDeleteBook}>
           DeleteBook
         </button>
       </div>{" "}
