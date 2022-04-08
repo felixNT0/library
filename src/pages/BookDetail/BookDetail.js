@@ -6,6 +6,7 @@ import EditBooks from "../../pages/EditBooks/EditBook";
 
 export default function BookDetail() {
   const { id } = useParams();
+
   const [book, setBook] = useState();
   // const book = books.find((book) => book.id === id);
   const navigate = useNavigate();
@@ -15,7 +16,6 @@ export default function BookDetail() {
     const bookIndex = books.findIndex((book) => book.title === book.title);
     books.splice(bookIndex, 1);
     localStorage.setItem("books", JSON.stringify(books));
-
     navigate("/book-list");
   };
 
@@ -41,7 +41,7 @@ export default function BookDetail() {
         >
           Prev
         </button>
-        <button className={styles.deleteButton} onClick={handleDeletBook}>
+        <button className={styles.deleteButton} onClick={handleDeleteBook}>
           DeleteBook
         </button>
       </div>{" "}
