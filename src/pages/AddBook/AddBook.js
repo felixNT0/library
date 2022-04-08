@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import styles from "./AddBook.module.css";
 
 // import axios from 'axios'
 
@@ -23,14 +25,11 @@ function AddBook() {
   const handleChange = (event) => {
     setValue((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
-
+ const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     let books = getDataFromLocalStorage();
-    books.push(value);
-
-    // console.log(value)
-    // console.log(books)
+    books.push({ ...value, id: new Date().toJSON() });
 
     localStorage.setItem("books", JSON.stringify(books));
     setValue({
@@ -38,15 +37,17 @@ function AddBook() {
       author: "",
     });
     setAdd("You have just successfully borrow a book from the library");
+    navigate("/book-list")
   };
 
   return (
-    <div>
+    <div className={styles.root}>
+      <h3 className={styles.headerText}>Add book to Library</h3>
+      <p className={styles.report}>{add}</p>
       <form onSubmit={handleSubmit}>
         <div className="card">
-          <h3>Add book to Library</h3>
-          <p>{add}</p>
           <input
+            className={styles.input}
             type="text"
             placeholder="Book Title"
             onChange={handleChange}
@@ -54,13 +55,14 @@ function AddBook() {
             // value={data}
           />
           <input
+            className={styles.input}
             type="text"
             placeholder="Book Autor"
             onChange={handleChange}
             name="author"
             //  value={data}
           />
-          <button className="submit" type="submit">
+          <button className={styles.submit} type="submit">
             Add More Books
           </button>
         </div>

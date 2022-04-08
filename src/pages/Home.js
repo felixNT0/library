@@ -13,7 +13,7 @@ function Home() {
         <p>A library where you can borrow books and read and lot more...</p>
 
         <p>
-          Please click <Link to={"/library"}>here</Link> to view the library
+          Please click <Link to={"/book-list"}>here</Link> to view the library
         </p>
       </div>
     </div>
