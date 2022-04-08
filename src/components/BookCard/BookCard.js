@@ -1,10 +1,17 @@
 import styles from "./BookCard.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BookCard(props) {
-  const { title, author } = props;
+  const { title, author, id } = props;
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.root}>
+    <div 
+      className={styles.root}
+      onClick={() => {
+        navigate("/book/" + id);
+      }}
+    >
       <img
         src="https://macmillan-dam.captureweb.co.uk/cdn/macmillan/previews/439664/d2600cec4c0f09bf8e6187a83a066343/0/14665546cf5662d409143d004ffc0c54/131898933.jpg"
         className={styles.book_image}
