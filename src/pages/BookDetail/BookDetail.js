@@ -1,31 +1,51 @@
-import { useParams } from "react-router"
-import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage"
-import EditBook from "../EditBooks/EditBook"
+import { useNavigate, useParams } from "react-router";
+import styles from "./BookDetail.module.css";
+import { useState, useEffect } from "react";
+import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
+import EditBooks from "../../pages/EditBooks/EditBook";
 
 export default function BookDetail() {
-  const { id } = useParams()
-  const books = getBooksFromLocalStorage()
-  let bookDetail = books.find((book) => book.id === id)
-  console.log(bookDetail)
+  const { id } = useParams();
+  const [book, setBook] = useState();
+  // const book = books.find((book) => book.id === id);
+  const navigate = useNavigate();
 
-  console.log(books.id)
-  
+  const handleDeletBook = () => {
+    const books = getBooksFromLocalStorage();
+    const bookIndex = books.findIndex((book) => book.title === book.title);
+    books.splice(bookIndex, 1);
+    localStorage.setItem("books", JSON.stringify(books));
+
+    navigate("/book-list");
+  };
+
+  function handleGetBooks() {
+    const books = getBooksFromLocalStorage();
+    let book = books.find((book) => book.id === id);
+    console.log(book);
+    setBook(book);
+  }
+
+  useEffect(() => {
+    handleGetBooks();
+  }, []);
 
   return (
-    <div>
-      <br />
-
-      <h3>Book Title: {bookDetail?.title}</h3>
-
-      <h5>Book Author: {bookDetail?.author}</h5>
-      <p>{id}</p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
-        provident eveniet officia ipsum dolorem sequi neque, iste fuga vero
-        explicabo odit, optio soluta blanditiis in.
-      </p>
-      <hr />
-      <EditBook />
+    <div className={styles.root}>
+      <h2 className={styles.title}>{book?.title}</h2>
+      <h4 className={styles.author}>{book?.author}</h4>
+      <div className={styles.buttons}>
+        <button
+          className={styles.deleteButton}
+          onClick={() => navigate("/book-list")}
+        >
+          Prev
+        </button>
+        <button className={styles.deleteButton} onClick={handleDeletBook}>
+          DeleteBook
+        </button>
+      </div>{" "}
+      {book && <EditBooks book={book} onUpdate={handleGetBooks} />}
     </div>
-  )
+  );
 }

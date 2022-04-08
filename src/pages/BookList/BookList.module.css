@@ -1,21 +1,6 @@
 .list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
-}
-
-.btn{
-    cursor: pointer;
-    background-color: cadetblue;
-    color: white;
-     border: none;
-  outline: none;
-    border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-.btn:hover{
-    background-color: white;
-    color: cadetblue;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }

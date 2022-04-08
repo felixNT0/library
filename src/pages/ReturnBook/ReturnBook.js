@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "./BorrowBooks.module.css";
+import styles from "./ReturnBook.module.css";
 import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
 
-function BorrowBooks() {
+function ReturnBook() {
   const [add, setAdd] = useState(false);
   const [value, setValue] = useState({
     title: "",
@@ -28,6 +28,7 @@ function BorrowBooks() {
 
     if (bookFindTitle && bookFindAuthor) {
       books.splice(bookTitleIndex, 1);
+
       localStorage.setItem("books", JSON.stringify(books));
       setValue({
         title: "",
@@ -43,7 +44,7 @@ function BorrowBooks() {
 
   return (
     <div className={styles.root}>
-      <h3 className={styles.headerText}>Borrow Book From The Library</h3>
+      <h3 className={styles.headerText}>Return Book to The Library</h3>
       <p className={styles.report}>{add}</p>
       <form onSubmit={handleSubmit}>
         <input
@@ -61,11 +62,11 @@ function BorrowBooks() {
           name="author"
         />
         <button className={styles.submit} type="submit">
-          Borrow Books
+          Return Books
         </button>
       </form>
     </div>
   );
 }
 
-export default BorrowBooks;
+export default ReturnBook;

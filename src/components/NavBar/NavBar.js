@@ -24,11 +24,11 @@ function NavBar() {
             Borrow Book
           </Link>
         </li>
-        {/* <li>
-          <Link className="btn" to="/edit-book">
-            Edit Book
+        <li>
+          <Link className="btn" to="/return-book">
+            Return Book
           </Link>
-        </li> */}
+        </li>
       </div>
     </div>
   );

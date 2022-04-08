@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className='App'>
+    <div className="App">
       <div
         style={{
           marginTop: "150px",
@@ -17,7 +17,7 @@ function Home() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
