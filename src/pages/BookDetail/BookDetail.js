@@ -8,7 +8,6 @@ import { FaStepBackward, FaRegTrashAlt } from "react-icons/fa";
 
 export default function BookDetail() {
   const { id } = useParams();
-
   const [book, setBook] = useState();
 
   const navigate = useNavigate();

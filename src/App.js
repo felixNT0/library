@@ -8,7 +8,6 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home";
 import BookDetail from "./pages/BookDetail/BookDetail";
 import ReturnBook from "./pages/ReturnBook/ReturnBook";
-
 function App() {
   return (
     <Router>
