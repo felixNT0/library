@@ -33,3 +33,9 @@
   font-size: 1em;
   font-weight: bold;
 }
+
+.submit:hover{
+background-color: whitesmoke;
+color: cadetblue;
+border: 1px solid cadetblue;
+}

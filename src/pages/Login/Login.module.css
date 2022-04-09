@@ -1,0 +1,86 @@
+.root {
+  align-items: center;
+  margin-top: 70px;
+}
+.headerText {
+  font-size: 2em;
+}
+.report {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: rgb(15, 128, 15);
+}
+.input {
+  display: block;
+  margin: 10px auto 20px auto;
+  border: 1px solid cadetblue;
+  height: 50px;
+  width: 40%;
+  outline: none;
+  border-radius: 15px;
+  padding-left: 20px;
+  font-size: 0.9em;
+}
+.submit {
+  display: block;
+  margin: 10px auto;
+  height: 50px;
+  width: 40%;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  border: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.submit:hover {
+  background-color: whitesmoke;
+  color: cadetblue;
+  border: 1px solid cadetblue;
+}
+
+.option {
+  gap: 50px;
+  display: inline-flex;
+}
+
+.change {
+  gap: 15px;
+  display: inline-flex;
+}
+
+.text {
+  color: cadetblue;
+  text-decoration: none;
+  background-color: whitesmoke;
+}
+
+.text:hover {
+  text-decoration: underline;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  margin-top: 25px;
+  color: cadetblue;
+  cursor: pointer;
+}
+
+.user {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  outline: none;
+  display: block;
+}
+.error {
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+}
