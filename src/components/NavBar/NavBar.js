@@ -29,7 +29,7 @@ function NavBar() {
         </li>
         <li>
           <Link className="btn" to="/borrow-book">
-            Borrow Book
+          Book Shelf
           </Link>
         </li>
         <li>

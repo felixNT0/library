@@ -8,7 +8,6 @@ import { FaStepBackward, FaRegTrashAlt } from "react-icons/fa";
 
 export default function BookDetail() {
   const { id } = useParams();
-
   const [book, setBook] = useState();
 
   const navigate = useNavigate();
@@ -59,6 +58,7 @@ export default function BookDetail() {
         <button className={styles.deleteButton} onClick={handleBorrowBook}>
           Borrow Book
         </button>
+
 
         <button className={styles.deleteButton} onClick={handleDeleteBook}>
           <FaRegTrashAlt />
