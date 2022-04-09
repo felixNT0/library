@@ -5,31 +5,49 @@
 .headerText {
   font-size: 2em;
 }
-.report {
-  font-weight: bold;
-  font-size: 1.5em;
-  color: rgb(15, 128, 15);
-}
-.input {
-  display: block;
-  margin: 10px auto 20px auto;
-  border: 1px solid cadetblue;
-  height: 45px;
-  width: 40%;
-  outline: none;
+.list {
+  display: flex;
+  margin: 10px 60px 20px 40px;
+  background-color: rgba(243, 242, 242, 0.8);
+  color: cadetblue;
+  padding: 5px 0 5px 20px;
   border-radius: 15px;
-  padding-left: 20px;
-  font-size: 0.9em;
+  max-width: 550px;
+  /* opacity: 0.5; */
 }
-.submit {
-  display: block;
-  margin: 10px auto;
+.list:hover {
+  background-color: rgba(243, 242, 242, 1);
+  border: 1px solid cadetblue;
+}
+.borrowedBooks {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.read {
+  margin: 10px 10px 0 auto;
   height: 40px;
-  border-radius: 10px;
-  padding: 0 10px 0 10px;
   border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: rgb(196, 144, 245);
+  color: white;
+}
+.read:hover {
+  background-color: transparent;
+  border: 1px solid rgb(196, 144, 245);
+  color: rgb(196, 144, 245);
+  transition: ease-in-out 1s;
+}
+.returnBook {
+  margin: 10px 10px 0 30px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
   background-color: cadetblue;
   color: white;
-  font-size: 1em;
-  font-weight: bold;
+}
+.returnBook:hover {
+  opacity: 0.7;
+  transition: ease-in-out 1s;
 }
