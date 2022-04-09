@@ -2,10 +2,7 @@ import styles from "./BorrowBooks.module.css";
 import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
 import { getBorrowedBooksFromLocalStorage } from "../../service/getBorrowedBooksFromLocalStorage";
 
-import { Navigate } from "react-router";
-import NavBar from "../../components/NavBar/NavBar";
-
-
+import { Navigate, useParams } from "react-router";
 
 function BorrowBooks() {
   const { id } = useParams();

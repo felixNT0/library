@@ -12,7 +12,6 @@ import SignUpForm from "./pages/SignUp/SignUpForm";
 import LoginForm from "./pages/Login/LoginForm";
 import UserAccountPasswordReset from "./pages/User/UserAccountPasswordReset";
 
-
 function App() {
   return (
     <Router>
