@@ -59,6 +59,7 @@ export default function BookDetail() {
           Borrow Book
         </button>
 
+
         <button className={styles.deleteButton} onClick={handleDeleteBook}>
           <FaRegTrashAlt />
         </button>
