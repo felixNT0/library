@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+import NavBar from "../../components/NavBar/NavBar";
 import styles from "./AddBook.module.css";
 
-// import axios from 'axios'
 
 const getDataFromLocalStorage = () => {
   const data = localStorage.getItem("books");
@@ -11,11 +11,11 @@ const getDataFromLocalStorage = () => {
   } else {
     return [];
   }
-  // return []
+  
 };
 
 function AddBook() {
-  //const URL = "  http://localhost:8000/books"
+  
   const [add, setAdd] = useState(false);
   const [value, setValue] = useState({
     title: "",
@@ -41,18 +41,19 @@ function AddBook() {
   };
 
   return (
-    <div className={styles.root}>
-      <h3 className={styles.headerText}>Add book to Library</h3>
-      <p className={styles.report}>{add}</p>
-      <form onSubmit={handleSubmit}>
-        <div className="card">
+    <div>
+      <NavBar />
+      <div className={styles.root}>
+        <h3 className={styles.headerText}>Add Book to The Library</h3>
+        <p className={styles.report}>{add}</p>
+        <form onSubmit={handleSubmit}>
           <input
             className={styles.input}
             type="text"
             placeholder="Book Title"
             onChange={handleChange}
             name="title"
-            // value={data}
+            required
           />
           <input
             className={styles.input}
@@ -60,13 +61,13 @@ function AddBook() {
             placeholder="Book Autor"
             onChange={handleChange}
             name="author"
-            //  value={data}
+            required
           />
           <button className={styles.submit} type="submit">
-            Add More Books
+            Add Books
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

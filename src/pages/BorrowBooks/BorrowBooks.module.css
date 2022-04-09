@@ -51,3 +51,9 @@
   opacity: 0.7;
   transition: ease-in-out 1s;
 }
+
+.submit:hover{
+background-color: whitesmoke;
+color: cadetblue;
+border: 1px solid cadetblue;
+}

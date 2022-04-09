@@ -53,11 +53,13 @@ export default function BookDetail() {
           onClick={() => navigate("/book-list")}
         >
           <FaStepBackward />
+
         </button>
 
         <button className={styles.deleteButton} onClick={handleBorrowBook}>
           Borrow Book
         </button>
+
 
         <button className={styles.deleteButton} onClick={handleDeleteBook}>
           <FaRegTrashAlt />
