@@ -42,7 +42,6 @@ function UserAccountPasswordReset() {
 
         <form onSubmit={handleSubmitForm}>
           <input
-            required
             className={styles.input}
             type="password"
             placeholder="Last Password"
@@ -52,7 +51,6 @@ function UserAccountPasswordReset() {
             // value={data}
           />
           <input
-            required
             className={styles.input}
             type="password"
             placeholder="New Password"

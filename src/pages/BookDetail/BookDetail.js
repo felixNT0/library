@@ -5,6 +5,7 @@ import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage
 import { getBorrowedBooksFromLocalStorage } from "../../service/getBorrowedBooksFromLocalStorage";
 import EditBooks from "../../components/EditBooks/EditBook";
 import { FaStepBackward, FaRegTrashAlt } from "react-icons/fa";
+import NavBar from "../../components/NavBar/NavBar";
 
 export default function BookDetail() {
   const { id } = useParams();
@@ -45,26 +46,29 @@ export default function BookDetail() {
   }, []);
 
   return (
-    <div className={styles.root}>
-      <h2 className={styles.title}>{book?.title}</h2>
-      <h4 className={styles.author}>{book?.author}</h4>
-      <div className={styles.buttons}>
-        <button
-          className={styles.deleteButton}
-          onClick={() => navigate("/book-list")}
-        >
-          <FaStepBackward />
-        </button>
+    <div>
+      <NavBar/>
+      <div className={styles.root}>
+        <h2 className={styles.title}>{book?.title}</h2>
+        <h4 className={styles.author}>{book?.author}</h4>
+        <div className={styles.buttons}>
+          <button
+            className={styles.deleteButton}
+            onClick={() => navigate("/book-list")}
+          >
+            <FaStepBackward />
+          </button>
 
-        <button className={styles.deleteButton} onClick={handleBorrowBook}>
-          Borrow Book
-        </button>
+          <button className={styles.deleteButton} onClick={handleBorrowBook}>
+            Borrow Book
+          </button>
 
-        <button className={styles.deleteButton} onClick={handleDeleteBook}>
-          <FaRegTrashAlt />
-        </button>
-      </div>{" "}
-      {book && <EditBooks book={book} onUpdate={handleGetBooks} />}
+          <button className={styles.deleteButton} onClick={handleDeleteBook}>
+            <FaRegTrashAlt />
+          </button>
+        </div>{" "}
+        {book && <EditBooks book={book} onUpdate={handleGetBooks} />}
+      </div>
     </div>
   );
 }

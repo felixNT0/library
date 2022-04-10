@@ -63,7 +63,7 @@ function LoginForm() {
 
           <div className={styles.option}>
             <label>
-              <input required type="checkbox" name="" />
+              <input type="checkbox" name="" />
               Remember Me
             </label>
             <Link className={styles.text} to="/resetpassword">
