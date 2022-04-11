@@ -22,6 +22,10 @@ const ReadBook = () => {
     <div className={styles.root}>
       <h1 className={styles.title}>{book.title}</h1>
       <h3 className={styles.author}>{book.author}</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
+        blanditiis?
+      </p>
       <button
         onClick={() => {
           navigate("/borrow-book");

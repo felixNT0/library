@@ -16,7 +16,7 @@ function NavBar() {
       <Link to="/" className="nav-title">
         <h1 className="logo">My Library</h1>
       </Link>
-      <div className="ul">
+    <div className="ul">
         <li>
           <Link className="btn" to="/book-list">
             Books
@@ -34,7 +34,7 @@ function NavBar() {
         </li>
         {currentUser && (
           <li className="auth" onClick={handleLogout}>
-            Logout
+            Logout<i className="fa-solid fa-power-off"></i>
           </li>
         )}
         {!currentUser && (

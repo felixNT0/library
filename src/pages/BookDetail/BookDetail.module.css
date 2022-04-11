@@ -7,9 +7,9 @@
 .author {
   margin: 0 auto 20 auto;
 }
-.buttons {
-  dispaly: flex;
-}
+/* .buttons {
+  display: flex;
+} */
 .deleteButton {
   text-align: center;
   margin-top: 15px;
@@ -26,4 +26,11 @@
 }
 .deleteButton:hover {
   opacity: 1;
+}
+
+.error {
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+  display: inline-block;
 }

@@ -4,6 +4,7 @@ import SearchBookForm from "../../components/SearchBookForm/SearchBookForm";
 import { getBooksFromLocalStorage } from "../../service/getBooksFromLocalStorage";
 import BookCard from "../../components/BookCard/BookCard";
 import NavBar from "../../components/NavBar/NavBar";
+// import { getCurrentUser } from "../../service/getCurrentUser";
 
 export default function BookList() {
   const books = getBooksFromLocalStorage();
@@ -27,7 +28,7 @@ export default function BookList() {
           <h5>Sorry, book not found!</h5>
         )}
         {(searchedBook ? searchedBook : books).map((book) => (
-          <BookCard {...book} key={book.title} />
+          <BookCard  {...book} key={book.title} />
         ))}
       </ul>
     </div>

@@ -27,11 +27,12 @@
 
 h3 {
     color: cadetblue;
+    margin-top: 25px;
 }
 
 .button {
 
-    height: 50px;
+    height: 60px;
     padding: 0px 20px;
     background-color: cadetblue;
     border: none;

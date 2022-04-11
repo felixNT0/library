@@ -14,6 +14,11 @@ function SignUpForm() {
     password: "",
   });
 
+//   const handleShowPassword = (e) => {
+//     e.preventDefault()
+    
+// }
+
   const handleChange = (event) => {
     setValue((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
@@ -26,7 +31,7 @@ function SignUpForm() {
       (user) =>
         user.username === value.username && user.email === value.email && user.password === value.password);
     if (checkUser) {
-      setAdd("You have an account already click on login to log you to your account")
+      setAdd(`${value.username}, You have an account already click on login to log you to your account`)
       return
     }
     else {
@@ -47,6 +52,9 @@ function SignUpForm() {
         <h1 className={styles.h1}>Welcome To Tsowa Ndakolo Felix Library</h1>
         <h3 className={styles.h3}>Create An Account</h3>
         <p className={styles.error}>{add}</p>
+        <div className={styles.userIcon}>
+          <i className="fas fa-user-plus"></i>
+        </div>
         <form onSubmit={handleSubmitForm}>
           <input
             className={styles.input}

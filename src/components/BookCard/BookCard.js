@@ -8,13 +8,7 @@ export default function BookCard(props) {
 
   return (
     <div>
-   
-      <div
-        className={styles.root}
-        onClick={() => {
-          navigate("/book/" + id);
-        }}
-      >
+      <div className={styles.root}>
         <img
           src="https://macmillan-dam.captureweb.co.uk/cdn/macmillan/previews/439664/d2600cec4c0f09bf8e6187a83a066343/0/14665546cf5662d409143d004ffc0c54/131898933.jpg"
           className={styles.book_image}
@@ -30,12 +24,14 @@ export default function BookCard(props) {
           <p className="card__title">{author}</p>
         </div>
         <div>
-          <h4>Book Info</h4>
-          <p>
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-            blanditiis?
-          </p>
+          <h4
+            onClick={() => {
+              navigate("/book/" + id);
+            }}
+          >
+            Book Info
+          </h4>
+         
         </div>
       </div>
     </div>

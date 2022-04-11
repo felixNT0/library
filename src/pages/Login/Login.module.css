@@ -49,6 +49,7 @@
 .change {
   gap: 15px;
   display: inline-flex;
+  
 }
 
 .text {
@@ -83,4 +84,11 @@
   background-color: red;
   color: #fff;
   font-weight: 600;
+}
+
+.userIcon{
+   width: 50px;
+   height: auto;
+  color: #fff;
+  display: inline-block;
 }

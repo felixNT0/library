@@ -37,11 +37,12 @@
   transition: 0.5s;
 }
 
-/* .btn:active{
-   background: whitesmoke;
+.btn-auth{
+  background: whitesmoke;
   color: cadetblue;
   transition: 0.5s;
-} */
+}
+
 
 button {
   cursor: pointer;
@@ -59,4 +60,8 @@ text-decoration: none;
 
 .auth{
   cursor: pointer;
+}
+
+.logout{
+gap: 10px;
 }

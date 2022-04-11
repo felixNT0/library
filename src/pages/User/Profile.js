@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getCurrentUser } from "../../service/getCurrentUser";
 import { getUsersDataFromLocalStorage } from "../../service/getUsersDataFromLocalStorage";
 
-function UserProfile() {
+function Profile() {
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
   // const currentUser = getCurrentUser()
   const [edit, setEdit] = useState(false);
@@ -23,7 +23,7 @@ function UserProfile() {
   //  }
 
   useEffect(() => {
-    console.log(getCurrentUser());
+    
     setCurrentUser(getCurrentUser());
   }, [localStorage.getItem("currentUser")]);
 
@@ -45,11 +45,7 @@ function UserProfile() {
 
           {edit && (
             <div className={styles.user}>
-              {/* {currentUser.find((user) => (
-              <div key={user}>
-                <p>{user.email}</p>
-              </div>
-            ))} */}
+             {currentUser.email}
 
               <button
                 onClick={() => setEdit(!edit)}
@@ -65,4 +61,4 @@ function UserProfile() {
   );
 }
 
-export default UserProfile;
+export default Profile;
