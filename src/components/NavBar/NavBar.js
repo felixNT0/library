@@ -5,11 +5,11 @@ import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const currentUser = getCurrentUser();
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
-      navigate("/");
+    navigate("/");
   };
   return (
     <div className="nav">
