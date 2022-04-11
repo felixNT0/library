@@ -6,7 +6,7 @@ import { useNavigate, Link, useParams } from "react-router-dom";
 
 function SignUpForm() {
   const [add, setAdd] = useState(false);
-  const [displayError, setDisplayError] = useState(false)
+  // const [displayError, setDisplayError] = useState(false)
 
   const [value, setValue] = useState({
     username: "",
@@ -14,36 +14,35 @@ function SignUpForm() {
     password: "",
   });
 
-//   const handleShowPassword = (e) => {
-//     e.preventDefault()
-    
-// }
-
   const handleChange = (event) => {
     setValue((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
   const navigate = useNavigate();
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    let users = getUsersDataFromLocalStorage();
-   
+    let users = getUsersDataFromLocalStorage() || [];
+
     let checkUser = users.find(
       (user) =>
-        user.username === value.username && user.email === value.email && user.password === value.password);
+        user.username === value.username &&
+        user.email === value.email &&
+        user.password === value.password
+    );
     if (checkUser) {
-      setAdd(`${value.username}, You have an account already click on login to log you to your account`)
-      return
+      setAdd(
+        `${value.username}, You have an account already click on login to log you to your account`
+      );
+      return;
+    } else {
+      let user = { ...value, id: new Date().toJSON(), type: "user" };
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      setValue(value);
+
+      navigate("/");
     }
-    else {
-       let user = { ...value, id: new Date().toJSON() };
-       users.push(user);
-       localStorage.setItem("users", JSON.stringify(users));
-       localStorage.setItem("currentUser", JSON.stringify(user));
-       setValue(value);
-       setAdd(false);
-       navigate("/");
-    }
-    
   };
 
   return (

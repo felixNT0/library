@@ -4,6 +4,5 @@ export const getBooksFromLocalStorage = () => {
   if (data) {
     return JSON.parse(data);
   }
-  return [];
+  return null;
 };
-

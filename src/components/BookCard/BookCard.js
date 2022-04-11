@@ -29,7 +29,7 @@ export default function BookCard(props) {
               navigate("/book/" + id);
             }}
           >
-            Book Info
+            Book Details
           </h4>
          
         </div>

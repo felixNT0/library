@@ -6,6 +6,7 @@ import SignUpForm from "../SignUp/SignUpForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getUsersDataFromLocalStorage } from "../../service/getUsersDataFromLocalStorage";
 import { getUsersDataThatHaveLoginBeforeFromLocalStorage } from "../../service/getCurrentUser";
+// import { getAdminDataFromLocalStorage } from "../../service/getAdminDataFromLocalStorage";
 
 function LoginForm() {
   // const [add, setAdd] = useState(false);
@@ -20,17 +21,16 @@ function LoginForm() {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     let users = getUsersDataFromLocalStorage();
+
     let user = users.find(
       (user) => user.email === value.email && user.password === value.password
     );
-    // console.log(user);
+
     if (!user) {
       setError("Invalid email/password");
       return;
     }
-
     localStorage.setItem("currentUser", JSON.stringify(user));
-
     // setUpdated(true);
     navigate("/");
   };
