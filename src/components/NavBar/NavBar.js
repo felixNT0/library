@@ -5,15 +5,15 @@ import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const currentUser = getCurrentUser();
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
-      navigate("/");
+    navigate("/");
   };
   return (
     <div className="nav">
-      <Link to="/home" className="nav-title">
+      <Link to="/" className="nav-title">
         <h1 className="logo">My Library</h1>
       </Link>
       <div className="ul">
@@ -29,12 +29,7 @@ function NavBar() {
         </li>
         <li>
           <Link className="btn" to="/borrow-book">
-          Book Shelf
-          </Link>
-        </li>
-        <li>
-          <Link className="btn" to="/return-book">
-            Return Book
+            Book Shelf
           </Link>
         </li>
         {currentUser && (

@@ -1,0 +1,52 @@
+.list {
+  display: flex;
+  margin: 10px 60px 20px 40px;
+  background-color: rgba(243, 242, 242, 0.8);
+  color: cadetblue;
+  padding: 5px 0 5px 20px;
+  border-radius: 15px;
+  max-width: 550px;
+  /* opacity: 0.5; */
+}
+.list:hover {
+  background-color: rgba(243, 242, 242, 1);
+  border: 1px solid cadetblue;
+}
+.borrowedBooks {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.read {
+  margin: 10px 10px 0 auto;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: rgb(196, 144, 245);
+  color: white;
+}
+.read:hover {
+  background-color: transparent;
+  border: 1px solid rgb(196, 144, 245);
+  color: rgb(196, 144, 245);
+  transition: ease-in-out 1s;
+}
+.returnBook {
+  margin: 10px 10px 0 30px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: cadetblue;
+  color: white;
+}
+.returnBook:hover {
+  opacity: 0.7;
+  transition: ease-in-out 1s;
+}
+
+.submit:hover{
+background-color: whitesmoke;
+color: cadetblue;
+border: 1px solid cadetblue;
+}
