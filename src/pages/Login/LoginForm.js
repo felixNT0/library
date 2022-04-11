@@ -8,8 +8,8 @@ import { getUsersDataFromLocalStorage } from "../../service/getUsersDataFromLoca
 import { getUsersDataThatHaveLoginBeforeFromLocalStorage } from "../../service/getCurrentUser";
 
 function LoginForm() {
-  const [add, setAdd] = useState(false);
-  const [updated, setUpdated] = useState(false);
+  // const [add, setAdd] = useState(false);
+  // const [updated, setUpdated] = useState(false);
   const [value, setValue] = useState({ email: "", password: "" });
   const [error, setError] = useState();
 
@@ -23,7 +23,7 @@ function LoginForm() {
     let user = users.find(
       (user) => user.email === value.email && user.password === value.password
     );
-    console.log(user);
+    // console.log(user);
     if (!user) {
       setError("Invalid email/password");
       return;
@@ -31,7 +31,7 @@ function LoginForm() {
 
     localStorage.setItem("currentUser", JSON.stringify(user));
 
-    setUpdated(true);
+    // setUpdated(true);
     navigate("/");
   };
 
@@ -40,6 +40,9 @@ function LoginForm() {
       <div className={styles.root}>
         <h1 className={styles.h1}>Welcome To Tsowa Ndakolo Felix Library</h1>
         <h3 className={styles.h3}>LogIn to your account</h3>
+        <div className={styles.userIcon}>
+          <i className="fas fa-user-circle"></i>
+        </div>
         {error && <p className={styles.error}>{error}</p>}
 
         <form onSubmit={handleSubmitForm}>

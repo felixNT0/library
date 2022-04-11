@@ -5,6 +5,7 @@ import styles from "./AddBook.module.css";
 
 
 const getDataFromLocalStorage = () => {
+//  const { id } = useParams();
   const data = localStorage.getItem("books");
   if (data) {
     return JSON.parse(data);
@@ -28,14 +29,16 @@ function AddBook() {
  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
+    //const currentUser = getCurrentUser();
     let books = getDataFromLocalStorage();
+      // const checkUserIndex = currentUser.findIndex((user) => user.id === id);
+      // console.log(checkUserIndex);
+      // const user = currentUser.find((user) => user.id === id);
+      // console.log(user);
     books.push({ ...value, id: new Date().toJSON() });
 
     localStorage.setItem("books", JSON.stringify(books));
-    setValue({
-      title: "",
-      author: "",
-    });
+    setValue(value);
     setAdd("You have just successfully borrow a book from the library");
     navigate("/book-list")
   };

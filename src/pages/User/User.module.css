@@ -35,6 +35,27 @@
   font-weight: bold;
 }
 
+.login{
+   display: block;
+  margin: 25px auto;
+  height: 25px;
+  width: 15%;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  border: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.login:hover{
+    background-color: whitesmoke;
+  color: cadetblue;
+  border: 1px solid cadetblue;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
 .profileButton{
    display: block;
   margin: 10px auto;
@@ -45,12 +66,14 @@
   color: white;
   font-size: 1em;
   font-weight: bold;
+     
 }
 
 .profileButton:hover{
    background-color: whitesmoke;
   color: cadetblue;
   border: 1px solid cadetblue;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -103,4 +126,11 @@
   background-color: red;
   color: #fff;
   font-weight: 600;
+}
+
+.userIcon{
+   width: 50px;
+   height: auto;
+  color: #fff;
+  display: inline-block;
 }

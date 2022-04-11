@@ -86,3 +86,10 @@
   font-weight: 600;
 }
 
+.userIcon{
+   width: 50px;
+   height: auto;
+  color: #fff;
+  display: inline-block;
+}
+

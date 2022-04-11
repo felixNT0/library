@@ -13,6 +13,7 @@ export default function BookCard(props) {
         className={styles.root}
         onClick={() => {
           navigate("/book/" + id);
+         
         }}
       >
         <img

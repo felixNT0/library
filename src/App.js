@@ -20,6 +20,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/book/:id" element={<BookDetail />} />
           <Route path="/add-book" element={<AddBook />} />
+          <Route path="/currentUser/id" element={<AddBook />} />
           <Route path="/borrow-book" element={<BorrowBooks />} />
           <Route path="/book-list" element={<BookList />} />
           <Route path="/return-book" element={<ReturnBook />} />

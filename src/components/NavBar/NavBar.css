@@ -60,3 +60,7 @@ text-decoration: none;
 .auth{
   cursor: pointer;
 }
+
+.logout{
+gap: 10px;
+}

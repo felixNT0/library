@@ -13,10 +13,10 @@ function NavBar() {
   };
   return (
     <div className="nav">
-      <Link to="/home" className="nav-title">
+      <Link to="/" className="nav-title">
         <h1 className="logo">My Library</h1>
       </Link>
-      <div className="ul">
+{ !currentUser &&     <div className="ul">
         <li>
           <Link className="btn" to="/book-list">
             Books
@@ -29,7 +29,7 @@ function NavBar() {
         </li>
         <li>
           <Link className="btn" to="/borrow-book">
-            Borrow Book
+            Book Shelf
           </Link>
         </li>
         <li>
@@ -39,7 +39,7 @@ function NavBar() {
         </li>
         {currentUser && (
           <li className="auth" onClick={handleLogout}>
-            Logout
+            Logout<i className="fa-solid fa-power-off"></i>
           </li>
         )}
         {!currentUser && (
@@ -56,7 +56,7 @@ function NavBar() {
             </li>
           </React.Fragment>
         )}
-      </div>
+      </div>}
     </div>
   );
 }
