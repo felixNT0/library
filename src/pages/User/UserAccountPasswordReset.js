@@ -64,7 +64,7 @@ function UserAccountPasswordReset() {
             // defaultValue={user.PasswordReset}
             // value={data}
           />
-          <i className="fas fa-eye"></i>
+       
           <input
             required
             className={styles.input}

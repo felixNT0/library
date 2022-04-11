@@ -16,7 +16,7 @@ function NavBar() {
       <Link to="/" className="nav-title">
         <h1 className="logo">My Library</h1>
       </Link>
-{ !currentUser &&     <div className="ul">
+    <div className="ul">
         <li>
           <Link className="btn" to="/book-list">
             Books
@@ -30,11 +30,6 @@ function NavBar() {
         <li>
           <Link className="btn" to="/borrow-book">
             Book Shelf
-          </Link>
-        </li>
-        <li>
-          <Link className="btn" to="/return-book">
-            Return Book
           </Link>
         </li>
         {currentUser && (
@@ -56,7 +51,7 @@ function NavBar() {
             </li>
           </React.Fragment>
         )}
-      </div>}
+      </div>
     </div>
   );
 }

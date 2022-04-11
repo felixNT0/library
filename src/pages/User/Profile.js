@@ -23,7 +23,7 @@ function Profile() {
   //  }
 
   useEffect(() => {
-    // console.log(getCurrentUser());
+    
     setCurrentUser(getCurrentUser());
   }, [localStorage.getItem("currentUser")]);
 
@@ -45,11 +45,7 @@ function Profile() {
 
           {edit && (
             <div className={styles.user}>
-              {/* {currentUser.find((user) => (
-              <div key={user}>
-                <p>{user.email}</p>
-              </div>
-            ))} */}
+             {currentUser.email}
 
               <button
                 onClick={() => setEdit(!edit)}

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import { getCurrentUser } from "../../service/getCurrentUser";
 import styles from "./AddBook.module.css";
 
 
@@ -15,8 +16,10 @@ const getDataFromLocalStorage = () => {
   
 };
 
+
+
 function AddBook() {
-  
+  const [currentUser, setCurrentUser] = useState(getCurrentUser())
   const [add, setAdd] = useState(false);
   const [value, setValue] = useState({
     title: "",
@@ -29,12 +32,7 @@ function AddBook() {
  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
-    //const currentUser = getCurrentUser();
     let books = getDataFromLocalStorage();
-      // const checkUserIndex = currentUser.findIndex((user) => user.id === id);
-      // console.log(checkUserIndex);
-      // const user = currentUser.find((user) => user.id === id);
-      // console.log(user);
     books.push({ ...value, id: new Date().toJSON() });
 
     localStorage.setItem("books", JSON.stringify(books));
@@ -43,12 +41,19 @@ function AddBook() {
     navigate("/book-list")
   };
 
+ useEffect(() => {
+   setCurrentUser(getCurrentUser());
+ }, [localStorage.getItem("currentUser")]);
+
   return (
     <div>
       <NavBar />
-      <div className={styles.root}>
+      <br/>
+      {!currentUser && <p>Sorry Create an Account first before You can be able to Add Books</p>}
+     {currentUser && <div className={styles.root}>
         <h3 className={styles.headerText}>Add Book to The Library</h3>
         <p className={styles.report}>{add}</p>
+
         <form onSubmit={handleSubmit}>
           <input
             className={styles.input}
@@ -70,7 +75,7 @@ function AddBook() {
             Add Books
           </button>
         </form>
-      </div>
+      </div>}
     </div>
   );
 }
