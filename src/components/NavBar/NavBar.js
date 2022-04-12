@@ -5,7 +5,6 @@ import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 function NavBar() {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
@@ -39,6 +38,11 @@ function NavBar() {
                   Add Book
                 </Link>
               </li>
+              {/* <li>
+                <Link className="btn" to="/make-user">
+                  Make User
+                </Link>
+              </li> */}
               <li className="auth" onClick={handleLogout}>
                 Logout<i className="fa-solid fa-power-off"></i>
               </li>
@@ -55,6 +59,11 @@ function NavBar() {
                 <li>
                   <Link className="btn" to="/borrow-book">
                     Book Shelf
+                  </Link>
+                </li>
+                <li>
+                  <Link className="btn" to="/make-admin">
+                    Make Admin
                   </Link>
                 </li>
                 <li className="auth" onClick={handleLogout}>

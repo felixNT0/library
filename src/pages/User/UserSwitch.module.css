@@ -1,0 +1,52 @@
+.root {
+  text-align: center;
+  margin-top: 50px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.list {
+  display: inline-block;
+  align-items: center;
+  background-color: rgba(243, 242, 242, 0.8);
+  color: cadetblue;
+  padding: 5px 0 5px 20px;
+  border-radius: 15px;
+  max-width: 550px;
+  cursor: pointer;
+}
+
+.list:hover {
+  background-color: rgba(243, 242, 242, 1);
+  border: 1px solid cadetblue;
+}
+
+.show {
+  display: inline-block;
+}
+
+.user {
+  display: inline-block;
+  justify-content: space-around;
+}
+
+.submit {
+  background-color: cadetblue;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  margin: 10px 10px 0 auto;
+}
+
+.submit:hover {
+  background-color: rgba(243, 242, 242, 0.8);
+  color: cadetblue;
+  border: 1px solid cadetblue;
+}
+
+.error {
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+}

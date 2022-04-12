@@ -9,19 +9,7 @@ function Profile() {
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
   // const currentUser = getCurrentUser()
   const [edit, setEdit] = useState(false);
-
-  //  const [display, setDisplay] = useState(false)
-
-  //   const checkUserDetail = () => {
-  //     let checkUserIndex = currentUser.findIndex((user) => user.id === index);
-  //     const currentUser = getCurrentUser();
-  //     if (checkUserIndex) {
-  //       setDisplay(true);
-  //     } else {
-  //       setDisplay(false);
-  //     }
-  //  }
-
+ 
   useEffect(() => {
     
     setCurrentUser(getCurrentUser());

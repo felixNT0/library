@@ -9,7 +9,9 @@ import SignUpForm from "./pages/SignUp/SignUpForm";
 import LoginForm from "./pages/Login/LoginForm";
 import UserAccountPasswordReset from "./pages/User/UserAccountPasswordReset";
 import ReadBook from "./pages/ReadBook/ReadBook";
-
+// import User from "./pages/User/User";
+import MakeAdmin from "./pages/User/MakeAdmin";
+import MakeUser from "./pages/User/MakeUser";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" exact element={<Home />} />
+          <Route path="/make-admin" element={<MakeAdmin />} />
+          <Route path="/make-user" element={<MakeUser />} />
           <Route path="/book/:id" element={<BookDetail />} />
           <Route path="/add-book" element={<AddBook />} />
           <Route path="/currentUser/id" element={<AddBook />} />
