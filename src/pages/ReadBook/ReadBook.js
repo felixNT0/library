@@ -22,10 +22,7 @@ const ReadBook = () => {
     <div className={styles.root}>
       <h1 className={styles.title}>{book.title}</h1>
       <h3 className={styles.author}>{book.author}</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-        blanditiis?
-      </p>
+
       <button
         onClick={() => {
           navigate("/borrow-book");
@@ -37,6 +34,38 @@ const ReadBook = () => {
       <button onClick={handleReturnBook} className={styles.buttonReturn}>
         Return Book
       </button>
+      <br />
+      <div className={styles.nav}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          soluta natus, sint consectetur tempora vitae magni obcaecati non
+          tempore, itaque aperiam neque quas laborum provident vero quam?
+          Corrupti fugiat quis velit animi non aliquam blanditiis placeat
+          explicabo asperiores deserunt ex ea minus, laudantium laborum beatae
+          dolore illo cum id a?
+        </p>
+      </div>
+
+      <div className={styles.nav1}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          soluta natus, sint consectetur tempora vitae magni obcaecati non
+          tempore, itaque aperiam neque quas laborum provident vero quam?
+          Corrupti fugiat quis velit animi non aliquam blanditiis placeat
+          explicabo asperiores deserunt ex ea minus, laudantium laborum beatae
+          dolore illo cum id a?
+        </p>
+      </div>
+      <div className={styles.nav2}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          soluta natus, sint consectetur tempora vitae magni obcaecati non
+          tempore, itaque aperiam neque quas laborum provident vero quam?
+          Corrupti fugiat quis velit animi non aliquam blanditiis placeat
+          explicabo asperiores deserunt ex ea minus, laudantium laborum beatae
+          dolore illo cum id a?
+        </p>
+      </div>
     </div>
   );
 };

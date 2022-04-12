@@ -27,6 +27,26 @@
   color: white;
   margin-left: 30px;
 }
+
 .buttonReturn:hover {
   opacity: 0.7;
+}
+
+.nav {
+  width: auto;
+  display: inline-block;
+  height: 50px;
+  color: cadetblue;
+}
+.nav1 {
+  width: auto;
+  display: inline-block;
+  height: 50px;
+  color: cadetblue;
+}
+.nav2 {
+  width: auto;
+  display: inline-block;
+  height: 50px;
+  color: cadetblue;
 }

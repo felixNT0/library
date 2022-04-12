@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 import Profile from "./User/Profile";
+import User from "./User/User";
 // import LoginForm from "./User/LoginForm";
 // import SignUpForm from "./User/SignUpForm";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -22,6 +23,8 @@ function Home() {
         <p>
           Please click <Link to={"/book-list"}>here</Link> to view the library
         </p>
+        <br />
+    
       </div>
     </div>
   );
