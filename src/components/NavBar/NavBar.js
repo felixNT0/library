@@ -38,11 +38,6 @@ function NavBar() {
                   Add Book
                 </Link>
               </li>
-              {/* <li>
-                <Link className="btn" to="/make-user">
-                  Make User
-                </Link>
-              </li> */}
               <li className="auth" onClick={handleLogout}>
                 Logout<i className="fa-solid fa-power-off"></i>
               </li>
